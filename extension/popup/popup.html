@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SecureNet</title>
+  <link rel="stylesheet" href="../lib/theme.css" />
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <header class="top">
+    <span class="brand">
+      <svg viewBox="0 0 32 32" width="20" height="20" aria-hidden="true"><path d="M16 2 4 7v8c0 7.5 5 13.5 12 15 7-1.5 12-7.5 12-15V7L16 2z" fill="#1c2b3e" stroke="#5aa9e6" stroke-width="1.8"/><path d="M10 17h4l2-5 2 9 2-4h2" fill="none" stroke="#5aa9e6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      SecureNet
+    </span>
+    <label class="switch" title="Real-time protection">
+      <input type="checkbox" id="protection" />
+      <span>Protection</span>
+    </label>
+  </header>
+  <main id="view" aria-live="polite"><p class="muted pad">Loading…</p></main>
+  <footer class="foot">
+    <a href="#" id="dashboard">Open dashboard</a>
+    <a href="#" id="panel" hidden>Open side panel</a>
+    <a href="#" id="settings">Settings</a>
+  </footer>
+  <script type="module" src="popup.js"></script>
+</body>
+</html>

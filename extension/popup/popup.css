@@ -1,0 +1,33 @@
+body { width: 360px; min-height: 200px; }
+body.panel { width: auto; }
+.top { display: flex; justify-content: space-between; align-items: center; padding: 12px 14px; border-bottom: 1px solid var(--line); }
+.brand { display: inline-flex; gap: 8px; align-items: center; font-weight: 700; font-size: 15px; }
+.switch { display: inline-flex; gap: 6px; align-items: center; font-size: 12px; color: var(--muted); cursor: pointer; }
+.switch input { accent-color: var(--signal); width: 16px; height: 16px; }
+main { padding: 14px; display: grid; gap: 12px; }
+.pad { padding: 8px 0; }
+.site { display: grid; gap: 4px; }
+.site .host { font-weight: 600; font-size: 15px; overflow-wrap: anywhere; }
+.site .url { font-size: 12px; color: var(--faint); max-height: 3.2em; overflow: hidden; }
+.verdict { display: flex; justify-content: space-between; align-items: center; padding: 12px; border-radius: 10px; background: var(--panel); border: 1px solid var(--line); }
+.verdict.PHISHING { border-color: rgba(229,72,77,.5); background: linear-gradient(90deg, var(--threat-bg), var(--panel)); }
+.verdict.SUSPICIOUS { border-color: rgba(232,169,59,.5); background: linear-gradient(90deg, var(--watch-bg), var(--panel)); }
+.verdict.LEGITIMATE { border-color: rgba(63,185,139,.45); background: linear-gradient(90deg, var(--safe-bg), var(--panel)); }
+.risk { text-align: right; }
+.risk b { font: 700 26px ui-monospace, Consolas, monospace; display: block; line-height: 1; }
+.PHISHING .risk b { color: var(--threat); } .SUSPICIOUS .risk b { color: var(--watch); } .LEGITIMATE .risk b { color: var(--safe); }
+.risk small { color: var(--muted); font-size: 11px; }
+.meter { height: 6px; border-radius: 3px; background: linear-gradient(90deg, var(--safe) 0 35%, var(--watch) 35% 60%, var(--threat) 60%); position: relative; opacity: .8; }
+.meter i { position: absolute; top: -4px; width: 3px; height: 14px; background: var(--text); border-radius: 2px; margin-left: -1px; }
+.rec { padding: 10px 12px; background: var(--panel); border-left: 3px solid var(--signal); border-radius: 0 8px 8px 0; font-size: 13px; }
+h2 { font-size: 12px; color: var(--muted); font-weight: 600; margin-bottom: 6px; }
+.row { display: flex; gap: 8px; flex-wrap: wrap; }
+.row .btn { flex: 1; }
+.meta { font-size: 11px; color: var(--faint); }
+.status { font-size: 12px; color: var(--muted); min-height: 1em; }
+.notice { padding: 12px; border-radius: 10px; background: var(--panel); border: 1px dashed var(--line-strong); display: grid; gap: 8px; }
+.notice.bad { border: 1px solid rgba(229,72,77,.45); background: var(--threat-bg); }
+.spin { width: 14px; height: 14px; border: 2px solid var(--muted); border-right-color: transparent; border-radius: 50%; animation: s .7s linear infinite; display: inline-block; vertical-align: -2px; margin-right: 6px; }
+@keyframes s { to { transform: rotate(360deg); } }
+.foot { display: flex; gap: 14px; padding: 10px 14px; border-top: 1px solid var(--line); font-size: 12px; }
+.foot a { text-decoration: none; }

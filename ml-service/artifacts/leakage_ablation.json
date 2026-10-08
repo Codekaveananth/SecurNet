@@ -1,0 +1,112 @@
+{
+  "repeats": 3,
+  "corpus_size": 30000,
+  "distinct_domains": 15353,
+  "configurations": {
+    "A": {
+      "accuracy": {
+        "mean": 0.9808444444444444,
+        "std": 0.0014208326545018712
+      },
+      "precision": {
+        "mean": 0.9815769300760306,
+        "std": 0.0018633870769809602
+      },
+      "recall": {
+        "mean": 0.9802744650796954,
+        "std": 0.0010811347822706307
+      },
+      "f1": {
+        "mean": 0.9809246007374083,
+        "std": 0.0012904654971428171
+      },
+      "roc_auc": {
+        "mean": 0.9803610529163873,
+        "std": 0.0017373096808462269
+      },
+      "shared_domains_train_test": 629,
+      "label": "Leaky features + random split",
+      "leaky_features": true,
+      "random_split": true
+    },
+    "B": {
+      "accuracy": {
+        "mean": 0.9801388895804851,
+        "std": 0.002822778080646601
+      },
+      "precision": {
+        "mean": 0.9812272718091283,
+        "std": 0.0036769739802253215
+      },
+      "recall": {
+        "mean": 0.9803917384831978,
+        "std": 0.011855331449162142
+      },
+      "f1": {
+        "mean": 0.9807805343533886,
+        "std": 0.007014839692087713
+      },
+      "roc_auc": {
+        "mean": 0.9775699289395154,
+        "std": 0.0034832622183382316
+      },
+      "shared_domains_train_test": 0,
+      "label": "Leaky features + grouped split",
+      "leaky_features": true,
+      "random_split": false
+    },
+    "C": {
+      "accuracy": {
+        "mean": 0.9648888888888889,
+        "std": 0.001662958838566201
+      },
+      "precision": {
+        "mean": 0.9641335447076478,
+        "std": 0.0025100282246648072
+      },
+      "recall": {
+        "mean": 0.9660159166630872,
+        "std": 0.001019108234459592
+      },
+      "f1": {
+        "mean": 0.9650731549859999,
+        "std": 0.0017449108177469976
+      },
+      "roc_auc": {
+        "mean": 0.9791684746550113,
+        "std": 0.0013236773317463076
+      },
+      "shared_domains_train_test": 629,
+      "label": "Clean features + random split",
+      "leaky_features": false,
+      "random_split": true
+    },
+    "D": {
+      "accuracy": {
+        "mean": 0.9614750506474145,
+        "std": 0.0031807964555841933
+      },
+      "precision": {
+        "mean": 0.9589429553817781,
+        "std": 0.0023616035112295768
+      },
+      "recall": {
+        "mean": 0.9701670905351467,
+        "std": 0.012221989404161852
+      },
+      "f1": {
+        "mean": 0.9644768138705013,
+        "std": 0.0057305711510250434
+      },
+      "roc_auc": {
+        "mean": 0.975817051950208,
+        "std": 0.003619427339578654
+      },
+      "shared_domains_train_test": 0,
+      "label": "Clean features + grouped split (SecureNet)",
+      "leaky_features": false,
+      "random_split": false
+    }
+  },
+  "accuracy_inflation_pp": 1.94
+}

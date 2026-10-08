@@ -1,0 +1,43 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.venv/
+venv/
+env/
+.env
+
+# Python ML artifacts / temporary files
+*.log
+
+# Node / React
+node_modules/
+dist/
+build/
+.env.local
+.env.*.local
+
+# Java / Maven
+target/
+*.class
+
+# IDE
+.vscode/
+.idea/
+*.iml
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Local configuration
+application-local.properties
+application-local.yml
+
+# Temporary files
+*.tmp
+*.temp
+# Local H2 database
+gateway/data/*.mv.db
+gateway/data/*.trace.db
+gateway/data/*.lock.db

@@ -1,0 +1,24 @@
+body { min-height: 100vh; background: radial-gradient(1200px 500px at 50% -10%, rgba(229,72,77,.18), transparent 60%), var(--ink); }
+.wrap { max-width: 760px; margin: 0 auto; padding: 56px 24px 64px; display: grid; gap: 22px; }
+.head { display: flex; gap: 18px; align-items: flex-start; }
+.shield { flex: none; width: 56px; height: 56px; }
+h1 { font-size: 26px; line-height: 1.25; }
+.lede { color: var(--muted); font-size: 15px; margin-top: 6px; }
+.site { padding: 14px 16px; background: var(--panel); border: 1px solid var(--line); border-radius: 10px; display: grid; gap: 6px; }
+.site .row { display: flex; gap: 10px; align-items: center; justify-content: space-between; flex-wrap: wrap; }
+.score { font: 700 30px ui-monospace, Consolas, monospace; }
+.score small { font-size: 13px; color: var(--muted); font-weight: 400; }
+.PHISHING .score { color: var(--threat); } .SUSPICIOUS .score { color: var(--watch); }
+.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.card { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 16px; display: grid; gap: 10px; align-content: start; }
+.card h2 { font-size: 14px; }
+.advice { border-color: rgba(229,72,77,.45); }
+.advice ul { margin: 0; padding-left: 18px; display: grid; gap: 5px; }
+.actions { display: flex; gap: 10px; flex-wrap: wrap; }
+.actions .spacer { flex: 1; }
+.confirm { display: none; padding: 14px 16px; border-radius: 10px; background: var(--threat-bg); border: 1px solid rgba(229,72,77,.45); gap: 10px; }
+.confirm.on { display: grid; }
+.foot { color: var(--faint); font-size: 12px; }
+.status { font-size: 13px; color: var(--muted); min-height: 1.2em; }
+@media (max-width: 640px) { .grid { grid-template-columns: 1fr; } .wrap { padding-top: 32px; } }
+h1:focus { outline: none; }

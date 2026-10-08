@@ -1,0 +1,60 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: securenet-gateway
+
+  datasource:
+    url: jdbc:h2:file:./data/securenet;DB_CLOSE_ON_EXIT=FALSE
+    driver-class-name: org.h2.Driver
+    username: ${SECURENET_DB_USER:sa}
+    password: ${SECURENET_DB_PASSWORD:}
+
+  # Off by default: the console is a full SQL shell. Enable only for local
+  # debugging with SECURENET_H2_CONSOLE=true, and set a DB password first.
+  h2:
+    console:
+      enabled: ${SECURENET_H2_CONSOLE:false}
+      path: /h2-console
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    open-in-view: false
+    properties:
+      hibernate:
+        format_sql: true
+    show-sql: false
+
+  jackson:
+    default-property-inclusion: non_null
+
+# Location of the Python ML microservice
+securenet:
+  ml:
+    base-url: ${SECURENET_ML_URL:http://localhost:8000}
+    timeout-ms: 5000
+  cors:
+    allowed-origins: ${SECURENET_CORS:http://localhost:5173,http://localhost:3000}
+  jwt:
+    # Read from the environment; never commit a real secret. Must be at least
+    # 32 bytes. If unset, JwtUtil generates a random per-process key (tokens
+    # then stop working after a restart, which is acceptable for local demos).
+    secret: ${SECURENET_JWT_SECRET:}
+    # Token expiration time in milliseconds (24 hours)
+    expiration: 86400000
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health
+  endpoint:
+    health:
+      show-details: never
+
+logging:
+  level:
+    com.securenet: INFO
+    org.hibernate.SQL: WARN

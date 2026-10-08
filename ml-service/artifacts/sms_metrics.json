@@ -1,0 +1,39 @@
+{
+  "config": {
+    "n_samples": 6000,
+    "n_train": 4500,
+    "n_test": 1500,
+    "vectoriser": "word(1,2) + char_wb(3,5) TF-IDF",
+    "classifier": "LogisticRegression(C=4.0, balanced)",
+    "n_features": 3297
+  },
+  "test": {
+    "accuracy": 0.976,
+    "precision": 0.9722589167767504,
+    "recall": 0.9800266311584553,
+    "f1": 0.9761273209549072,
+    "roc_auc": 0.9738035089840159,
+    "confusion_matrix": {
+      "tn": 728,
+      "fp": 21,
+      "fn": 15,
+      "tp": 736
+    }
+  },
+  "cross_validation": {
+    "folds": 5,
+    "f1_mean": 0.9800154938307223,
+    "f1_std": 0.0030457118094973637,
+    "f1_per_fold": [
+      0.9834,
+      0.9783,
+      0.9807,
+      0.9826,
+      0.975
+    ]
+  },
+  "timing": {
+    "train_seconds": 0.74,
+    "single_inference_ms": 1.748
+  }
+}

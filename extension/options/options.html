@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SecureNet settings</title>
+  <link rel="stylesheet" href="../lib/theme.css" />
+  <link rel="stylesheet" href="options.css" />
+</head>
+<body>
+  <main class="wrap">
+    <header>
+      <h1>SecureNet settings</h1>
+      <p class="muted">Changes save automatically.</p>
+    </header>
+
+    <section class="card">
+      <h2>Protection</h2>
+      <label class="opt"><input type="checkbox" id="protection" /><span><strong>Real-time protection</strong><small>Check each site as you navigate to it.</small></span></label>
+      <label class="opt"><input type="checkbox" id="notifications" /><span><strong>Notifications</strong><small>Show a system notification when a dangerous site is detected.</small></span></label>
+      <fieldset>
+        <legend><strong>Warning sensitivity</strong><small>Changes when SecureNet interrupts you. The model's verdict and score are never changed.</small></legend>
+        <div id="sensitivity"></div>
+      </fieldset>
+    </section>
+
+    <section class="card">
+      <h2>Privacy</h2>
+      <ul class="facts">
+        <li>Only the address of each page is sent, to the server below. Never page content, forms, passwords, OTPs, UPI PINs, cookies or keystrokes.</li>
+        <li>Passwords in addresses (user:password@host) and everything after # are always removed.</li>
+        <li>Local and private-network addresses are never sent.</li>
+      </ul>
+      <label class="opt"><input type="checkbox" id="redactQuery" /><span><strong>Hide query values</strong><small>Send <span class="mono">?id=x&amp;token=x</span> instead of the real values. More private, but less accurate, because the model reads the query.</small></span></label>
+      <label class="opt"><input type="checkbox" id="localHistory" /><span><strong>Keep local history</strong><small>Store checked sites (without query or credentials) on this device, and show them on the SecureNet dashboard.</small></span></label>
+      <div class="row"><button class="btn btn-quiet" id="clearHistory">Clear local history</button><button class="btn btn-quiet" id="clearCache">Clear cached verdicts</button><span class="status" id="histStatus" role="status"></span></div>
+    </section>
+
+    <section class="card">
+      <h2>Trusted sites</h2>
+      <p class="muted">Sites on this list, and their subdomains, are never checked.</p>
+      <ul id="trusted" class="trusted"></ul>
+      <form id="trustForm" class="row">
+        <label class="sr" for="trustInput">Add a trusted site</label>
+        <input id="trustInput" class="field" placeholder="example.com" autocomplete="off" />
+        <button class="btn" type="submit">Add</button>
+      </form>
+    </section>
+
+    <section class="card">
+      <h2>Connection</h2>
+      <label class="field-row"><span>SecureNet server</span><input id="serverUrl" class="field mono" /></label>
+      <label class="field-row"><span>Gateway (optional)</span><input id="gatewayUrl" class="field mono" placeholder="http://localhost:8080" /></label>
+      <label class="field-row"><span>API key (optional)</span><input id="apiKey" class="field mono" type="password" autocomplete="off" /></label>
+      <label class="field-row"><span>Dashboard</span><input id="dashboardUrl" class="field mono" /></label>
+      <p class="muted small">Use https for any server that is not on this computer. The dashboard bridge works on localhost:5173 and 127.0.0.1:5173.</p>
+      <div class="row"><button class="btn btn-primary" id="saveConn">Save connection</button><button class="btn" id="test">Test connection</button><span class="status" id="connStatus" role="status"></span></div>
+    </section>
+  </main>
+  <script type="module" src="options.js"></script>
+</body>
+</html>
